@@ -1,0 +1,4 @@
+[Data Analyst, Аналитик данных, Специалист по анализу данных, Специалист по обработке данных]
+[Data Scientist, Data Science]
+[Data Engineer, Инженер данных]
+[Machine Learning Engineer, Machine Learning, ML Engineer, ML инженер, ML специалист, Инженер машинного обучения, Специалист по машинному обучению]
