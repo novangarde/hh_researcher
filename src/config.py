@@ -19,7 +19,7 @@ class Config:
         
         self.__experience = "noExperience" # ['noExperience', 'between1And3', 'between3And6', 'moreThan6'].
         self.__employment = "full" # ['full', 'part', 'project', 'volunteer', 'probation']
-        self.__schedule = "remote" # ['fullDay', 'shift', 'flexible', 'remote', 'flyInFlyOut']
+        self.__schedule = "fullDay" # ['fullDay', 'shift', 'flexible', 'remote', 'flyInFlyOut']
         self.__country = "Россия" # Страна, к примеру, "Россия"
         self.__region = "" # Регион, к примеру, "Республика Башкортостан"
         self.__city = "" # Город, к примеру, "Стерлитамак"
