@@ -18,27 +18,53 @@
 
 Для получения данных используется метод [get_vacancies](https://api.hh.ru/openapi/redoc#tag/Poisk-vakansij/operation/get-vacancies) сайта hh.ru
 
-Возможен парсинг сразу по списку вакансий. Подробнее в разделе "Парсинг по списку"
-
 ## Быстрое начало
 
-1. Установите зависимости из requirements.txt
+0. Клонируйте проект
 
-```Bash
-pip -r requirements.txt
+``` Bash
+git clone git@github.com:novangarde/hh_researcher.git
 ```
 
-2.Запустите скрипт, передав ему в качестве аргумента название вакансии (пробелы заменить на "+")
+1. Обновите список пакетов:
 
 ```Bash
-python3 parser.py <название+искомой+вакансии>
+sudo apt update
 ```
 
-3.Список вакансий сохранится в директории `./vacancies` с назавнием, соответствующим поисковому запросу. К примеру, если вы искали вакансии `backend+developer`, полученный файл будет выглядеть так:
+2. Установите интерпретатор Python3, менеджер пакетов pip и инструмент для создания изолированных виртуальных окружений Virtualenv:
 
 ```Bash
-./vacancies/backend+developer.csv
+sudo apt install python3 python3-pip python3-venv
 ```
+
+3. Создайте виртуальное окружение:
+
+```Bash
+python3 -m venv <название> # пример: python3 -m venv test
+```
+
+4. Активируйте виртуальное окружение:
+
+```Bash
+source ./<название>/bin/activate # пример: source ./test/bin/activate
+```
+
+5. Установите зависимости из файла requirements.txt:
+
+```Bash
+pip install -r requirements.txt
+```
+
+6. Запустите скрипт, передав ему в качестве аргумента название вакансии в кавычках:
+
+```Bash
+python3 researcher.py <название+искомой+вакансии> # пример: python3 researcher.py "Data Scientist"
+```
+
+7. Собранные данные о вакансиях вы найдете в следующих директориях:
+* `data/raw` - для сырых данных
+* `data/processed` - для обработанных
 
 ## Парсинг по списку
 
