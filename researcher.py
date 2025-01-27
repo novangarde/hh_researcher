@@ -1,6 +1,7 @@
 import sys
 import src.config
 import src.parser
+import src.analizer
 from src.files_handler import Project_structure
 
 def main():
@@ -10,6 +11,7 @@ def main():
     config = src.config.Config()
     ps = Project_structure()
     parser = src.parser.Parser(sys.argv[1], config, ps)
+    stats = src.analizer.Analizer()
 
     ps.restart_structure()
 
@@ -24,6 +26,7 @@ def main():
     ps.combine_files()
     print("\nГотово!\nРезультат парсинга в ./data")
 
+    stats.calculate_stats()
 
 if __name__ == "__main__":
     try:
