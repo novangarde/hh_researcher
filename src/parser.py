@@ -1,6 +1,7 @@
 import httpx
 import csv
 import os
+import time
 import pandas as pd
 from src.files_handler import Files_operations
 
@@ -123,7 +124,7 @@ class Parser:
                             'professional_roles': ', '.join([pr['name'] for pr in item.get('professional_roles', [])]),
                             'experience_name': item['experience']['name'] if item.get('experience') else None,
                             'employment_name': item['employment']['name'] if item.get('employment') else None,
-                            'company_url': item['employer']['alternate_url'],
+                            'company_url': item['employer'].get('alternate_url') if item.get('employer') else None,
                             'salary_from': item['salary']['from'] if item.get('salary') else None,
                             'salary_to': item['salary']['to'] if item.get('salary') else None,
                             'salary_gross': item['salary']['gross'] if item.get('salary') else None,
@@ -140,6 +141,7 @@ class Parser:
                     request_page += 1
                 
                 print(f"+ {vacancy_name}")
+                time.sleep(1/30)
 
     @property
     def vacancy_input(self):

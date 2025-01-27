@@ -2,7 +2,6 @@ import pandas as pd
 
 class Analizer:
     def calculate_stats(self):
-        print("test")
         # Читаем данные из файла combined.csv
         df = pd.read_csv("./data/processed/_combined.csv")
 
