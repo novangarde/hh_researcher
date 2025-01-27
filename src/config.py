@@ -17,11 +17,11 @@ class Config:
         :param __area_id: Область поиска: если указаны страна, регион (не обязательно) и город, ищет по городу, если страна и регион - по региону, если только страна - по стране
         """
         
-        self.__experience = "noExperience" # ['noExperience', 'between1And3', 'between3And6', 'moreThan6'].
+        self.__experience = "noExperience" # ['noExperience', 'between1And3', 'between3And6', 'moreThan6']
         self.__employment = "full" # ['full', 'part', 'project', 'volunteer', 'probation']
-        self.__schedule = "fullDay" # ['fullDay', 'shift', 'flexible', 'remote', 'flyInFlyOut']
+        self.__schedule = "remote" # ['fullDay', 'shift', 'flexible', 'remote', 'flyInFlyOut']
         self.__country = "Россия" # Страна, к примеру, "Россия"
-        self.__region = "" # Регион, к примеру, "Республика Башкортостан"
+        self.__region = "Москва" # Регион, к примеру, "Республика Башкортостан"
         self.__city = "" # Город, к примеру, "Стерлитамак"
         self.__area_id = 0 # Заполняется автоматически, на основании заполненных выше полей
         self.update_area_id()
