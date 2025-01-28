@@ -3,6 +3,7 @@ import csv
 import os
 import time
 import pandas as pd
+import re
 from src.files_handler import Files_operations
 
 class Parser:
@@ -69,7 +70,7 @@ class Parser:
         Перебирает ключевые слова, отправляет запросы к hh.ru, чтобы получить подходящие вакансии.
         Полученные вакансии сохраняет в словарь, затем записывает в .csv-файл."""
         
-        vacancy_group_name = vacancy_group[0].replace("/", "+")
+        vacancy_group_name = re.sub(r'[<>:"\\|?*]', '', vacancy_group[0]).replace("/", "+")
         request_endpoint = "https://api.hh.ru/vacancies/"
         request_head = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}
         experience = "&experience="+self.config.experience if self.config.experience in ['noExperience', 'between1And3', 'between3And6', 'moreThan6'] else ""
@@ -93,7 +94,7 @@ class Parser:
             if not file_exists: writer.writeheader()
 
             for vacancy_name in vacancy_group:
-                vacancy_name = vacancy_name.replace("/", "+")
+                vacancy_name = re.sub(r'[<>:"\\|?*]', '', vacancy_name).replace("/", "+")
                 request_page = 0
                 all_pages = 1
 
