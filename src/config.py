@@ -17,8 +17,8 @@ class Config:
         :param __area_id: Область поиска: если указаны страна, регион (не обязательно) и город, ищет по городу, если страна и регион - по региону, если только страна - по стране
         """
         
-        self.__experience = "between1And3" # ['noExperience', 'between1And3', 'between3And6', 'moreThan6']
-        self.__employment = "full" # ['full', 'part', 'project', 'volunteer', 'probation']
+        self.__experience = "noExperience" # ['noExperience', 'between1And3', 'between3And6', 'moreThan6']
+        self.__employment = "" # ['full', 'part', 'project', 'volunteer', 'probation']
         self.__schedule = "remote" # ['fullDay', 'shift', 'flexible', 'remote', 'flyInFlyOut']
         self.__country = "Россия" # Страна, к примеру, "Россия"
         self.__region = "Москва" # Регион, к примеру, "Республика Башкортостан"

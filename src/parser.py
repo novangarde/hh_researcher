@@ -71,10 +71,14 @@ class Parser:
         
         request_endpoint = "https://api.hh.ru/vacancies/"
         request_head = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}
-        experience = "&experience="+self.config.experience if self.config.experience else None
-        employment = "&employment="+self.config.employment if self.config.employment else None
-        schedule = "&schedule="+self.config.schedule if self.config.schedule else None
+        experience = "&experience="+self.config.experience if self.config.experience in ['noExperience', 'between1And3', 'between3And6', 'moreThan6'] else ""
+        print(f"Experience: {experience}")
+        employment = "&employment="+self.config.employment if self.config.employment in ['full', 'part', 'project', 'volunteer', 'probation'] else ""
+        print(f"Employment: {employment}")
+        schedule = "&schedule="+self.config.schedule if self.config.schedule in ['fullDay', 'shift', 'flexible', 'remote', 'flyInFlyOut'] else ""
+        print(f"Schedule: {schedule}")
         area = self.config.area_id
+        print(f"Area: {area}")
 
         file_name = f'./data/raw/{vacancy_group[0]}.csv'
         file_exists = os.path.isfile(file_name)
@@ -96,9 +100,10 @@ class Parser:
                 all_pages = 1
 
                 while request_page < all_pages:
+
                     request = f'{request_endpoint}?text={vacancy_name}&search_field=name&page={request_page}&per_page=100&responses_count_enabled=true&area={area}{experience}{employment}{schedule}'
                     response = httpx.get(request, headers=request_head)
-                    
+
                     if response.status_code != 200:
                         raise Exception(f"{response.status_code}: {response.text}")
 
