@@ -2,7 +2,14 @@
 
 Скрипт для парсинга, анализа и сравнения зарплат по выбранным профессиям. Собирает вакансии с сайта Head Hunter (hh.ru) по API и подсчитывает статистику. Использует API hh.ru для сбора данных по заданным ключевым словам, группирует вакансии по специализациям и сохраняет результаты в формате .csv и .xlsx.
 
-![Stats](./img/stats.jpg)
+| **Title**     | HeadHunter Researcher         |
+| :--           | :--                           |
+| **Author**    | Vlas Babinets                 |
+| **Language**  | Python (3+)                   |
+| **Release**   | 26 Jan 2025                   |
+| **License**   | MIT license                   |
+
+![Stats](./img/stats_example.jpg)
 
 ## Содержание
 
