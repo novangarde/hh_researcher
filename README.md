@@ -272,10 +272,10 @@ python3 researcher.py ./samples/keywords_list_ds.txt # вместо ./samples/ke
 ```
 
 Результаты:
-* `./data/raw/Data+Analyst.csv`             - список вакансий по списку синонимам из __первой__ строки файла `./samples/keywords_list_ds.txt`
-* `./data/raw/Data+Scientist.csv`           - список вакансий по списку синонимам из __второй__ строки файла `./samples/keywords_list_ds.txt`
-* `./data/raw/Data+Engineer.csv`            - список вакансий по списку синонимам из __третьей__ строки файла `./samples/keywords_list_ds.txt`
-* `./data/raw/Machine+Learning+Engineer.csv`- список вакансий по списку синонимам из __четвертой__ строки файла `./samples/keywords_list_ds.txt`
+* `./data/raw/Data+Analyst.csv`             - список вакансий по списку синонимам из __первой__ строки файла
+* `./data/raw/Data+Scientist.csv`           - список вакансий по списку синонимам из __второй__ строки файла
+* `./data/raw/Data+Engineer.csv`            - список вакансий по списку синонимам из __третьей__ строки файла
+* `./data/raw/Machine+Learning+Engineer.csv`- список вакансий по списку синонимам из __четвертой__ строки файла
 * `./data/processed/_combined.csv`          - все вакансии из всех файлов выше.
 * `./data/processed/_combined.xlsx`         - тот же файл, но в .xlsx
 
